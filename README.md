@@ -6,4 +6,4 @@ Will: tree
 
 Nikki: balance
 
-Anusha: hight
+Anusha: height
