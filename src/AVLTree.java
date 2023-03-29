@@ -10,6 +10,17 @@ public class AVLTree {
 		Node right;
 		int height;
 		int balance;
+	
+		Node(int d, Node p) {
+			data = d;
+			parent = p;
+			height = p.height + 1;
+		}
+		
+		Node(int d) {
+			data = d;
+			height = 1;
+		}
 		
 	}
 	
