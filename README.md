@@ -1,4 +1,4 @@
-# Lab8package lab8;
+package lab8;
 
 public class AVLTree {
 
@@ -34,11 +34,19 @@ public class AVLTree {
 		}
 	}
 	
-	public boolean add(int number) {
-		if (number == null)
+	public boolean add(Node node, int number, int data) {
+		if (node == null) {
 			return true;
 		}
+	
+		if (data < node.data) {
+			
+		}
 		
+		else if (data > node.data) {
+			
+		}
+			
 		return false;
 		
 	}
@@ -55,7 +63,14 @@ public class AVLTree {
 		
 	}
 	
-	public void rotateL() {
+	public void rotateL(Node node) {
+		Node nodeL = node.left;
+		Node nodeR = node.right;
+		Node nodeT = node;
+		
+		node = nodeR;
+		nodeR = nodeT;
+		nodeR = nodeL.left;
 		
 	}
 
