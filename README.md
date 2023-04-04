@@ -2,7 +2,7 @@
 
 Benjamin: Print, add and rotate methods
 
-Will: tree
+Will: tree, testing
 
 Nikki: balance
 
