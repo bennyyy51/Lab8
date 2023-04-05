@@ -3,7 +3,7 @@
    
        public void print(Node root) {
 
-        System.out.println(root);
+        System.out.println(root.data);
         if (root.left != null) {
             print(root.left);
         }
@@ -32,23 +32,26 @@
         node.height = 1 + getHeight(node);
 
         int balance = getBalance(node);
+        
+         if (node.left != null && node.right != null && node.left.right != null && node.right.left != null) {
 
-        if (balance > 1 && data < node.left.data) {
-            return rotateR(node);
-        }
-        
-        if (balance < -1 && data > node.right.data) {
-            return rotateL(node);
-        }
-        
-        if (balance > 1 && data > node.left.data) {
-            node.left = rotateL(node.left);
-            return rotateR(node);
-        }
-        
-        if (balance < -1 && data < node.right.data) {
-            node.right = rotateR(node.right);
-            return rotateL(node);
+           if (balance > 1 && data < node.left.data) {
+               return rotateR(node);
+           }
+
+           if (balance < -1 && data > node.right.data) {
+               return rotateL(node);
+           }
+
+           if (balance > 1 && data > node.left.data) {
+               node.left = rotateL(node.left);
+               return rotateR(node);
+           }
+
+           if (balance < -1 && data < node.right.data) {
+               node.right = rotateR(node.right);
+               return rotateL(node);
+           }
         }
         
         return node;
