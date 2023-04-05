@@ -1,9 +1,8 @@
-
 public class AVLTree {
 
     Node root = null;
 
-    class Node {
+    static class Node {
 
         int data;
         Node parent;
@@ -144,6 +143,49 @@ public class AVLTree {
     
     public static void main(String[] args) {
         
+    	// testing code for AVLTree
+    	
+    	// Right rotation
+    	AVLTree tree = new AVLTree(new Node(12));
+    	tree.add(tree.root, 15);
+    	tree.add(tree.root, 11);
+    	tree.add(tree.root, 7);
+    	tree.add(tree.root, 4);
+    	System.out.println("\ntree.print after R rotation:");
+    	tree.print(tree.root);
+    	
+    	//Left rotation
+    	tree = new AVLTree(new Node(12));
+    	tree.add(tree.root, 11);
+    	tree.add(tree.root, 15);
+    	tree.add(tree.root, 17);
+    	tree.add(tree.root, 25);
+    	System.out.println("\ntree.print after L rotation:");
+    	tree.print(tree.root);
+
+    	//Right-left rotation
+    	tree = new AVLTree(new Node(12));
+    	tree.add(tree.root, 11);
+    	tree.add(tree.root, 13);
+    	tree.add(tree.root, 17);
+    	tree.add(tree.root, 25);
+    	tree.add(tree.root, 16);
+    	tree.add(tree.root, 14);
+    	tree.add(tree.root, 15);
+    	System.out.println("\ntree.print after R-L rotation:");
+    	tree.print(tree.root);
+    	
+    	//Left-right rotation
+    	tree = new AVLTree(new Node(14));
+    	tree.add(tree.root, 20);
+    	tree.add(tree.root, 13);
+    	tree.add(tree.root, 9);
+    	tree.add(tree.root, 8);
+    	tree.add(tree.root, 10);
+    	tree.add(tree.root, 12);
+    	tree.add(tree.root, 11);
+    	System.out.println("\ntree.print after L-R rotation:");
+    	tree.print(tree.root);
 
     }
 }
