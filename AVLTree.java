@@ -1,9 +1,10 @@
+package lab8;
 
 public class AVLTree {
 
-   static Node root = null;
+    Node root = null;
 
-    class Node {
+    static class Node {
 
         int data;
         Node parent;
@@ -54,10 +55,12 @@ public class AVLTree {
 
     public void print(Node root) {
 
-        System.out.println(root.data);
+        System.out.print(root.data + " ");
+
         if (root.left != null) {
             print(root.left);
         }
+        
         if (root.right != null) {
             print(root.right);
         }
@@ -144,26 +147,30 @@ public static void main(String[] args) {
         // testing code for AVLTree
         
         // Right rotation
-        AVLTree.Node node = new AVLTree(root).new Node(12);
-        AVLTree tree = new AVLTree(node);
+        Node r = new Node(12);
+        AVLTree tree = new AVLTree(r);
         tree.add(tree.root, 15);
         tree.add(tree.root, 11);
         tree.add(tree.root, 7);
         tree.add(tree.root, 4);
-        System.out.println("\ntree.print after R rotation:");
+        System.out.println("\nPre-order traversal after R rotation:");
         tree.print(tree.root);
+        System.out.println("\n");
         
         //Left rotation
-        tree = new AVLTree(node);
+        r = new Node(12);
+        tree = new AVLTree(r);
         tree.add(tree.root, 11);
         tree.add(tree.root, 15);
         tree.add(tree.root, 17);
         tree.add(tree.root, 25);
-        System.out.println("\ntree.print after L rotation:");
+        System.out.println("\nPre-order traversal after L rotation:");
         tree.print(tree.root);
+        System.out.println("\n");
 
         //Right-left rotation
-        tree = new AVLTree(node);
+        r = new Node(12);
+        tree = new AVLTree(r);
         tree.add(tree.root, 11);
         tree.add(tree.root, 13);
         tree.add(tree.root, 17);
@@ -171,11 +178,13 @@ public static void main(String[] args) {
         tree.add(tree.root, 16);
         tree.add(tree.root, 14);
         tree.add(tree.root, 15);
-        System.out.println("\ntree.print after R-L rotation:");
+        System.out.println("\nPre-order traversal after R-L rotation:");
         tree.print(tree.root);
+        System.out.println("\n");
         
         //Left-right rotation
-        tree = new AVLTree(node);
+        r = new Node(14);
+        tree = new AVLTree(r);
         tree.add(tree.root, 20);
         tree.add(tree.root, 13);
         tree.add(tree.root, 9);
@@ -183,8 +192,9 @@ public static void main(String[] args) {
         tree.add(tree.root, 10);
         tree.add(tree.root, 12);
         tree.add(tree.root, 11);
-        System.out.println("\ntree.print after L-R rotation:");
+        System.out.println("\nPre-order traversal after L-R rotation:");
         tree.print(tree.root);
+        System.out.println("\n");
 
     }
 
